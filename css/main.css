@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    padding: 0;
+    margin: 0 auto;
+    min-width: 1100px;
+    height: 100%;
+}
+
+div.container_main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+div.container_main div.container_login_left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div.container_main div.container_login_img {
+    width: 580px;
+    height: 580px;
+    background-image: url('../images/395.jpg');
+    background-repeat: no-repeat;
+    background-size: 580px;
+}
+
+div.container_main div.container_login_right {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+div.container_main div.container_login {
+    position: relative;
+    width: 60%;
+    height: 70%;
+    top: 9%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+div.container_main div.container_login div.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: table;
+    top: 25%;
+}
+
+div.login_pre_header {
+    width: 100%;
+    height: 17%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 4vw;
+    color: black;
+}
+
+div.login_post_header {
+    width: 98%;
+    height: 10%;
+    margin-left: 2%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5vw;
+    color: grey;
+}
+
+div.forget_password_header {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    margin-top: 2%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 0.7vw;
+    color: #177ec0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
+
+div.create_profile_header {
+    width: 100%;
+    height: 40%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1vw;
+    font-weight: 600;
+    color: grey;
+}
+
+div.create_profile_header a {
+    margin-left: 1%;
+    color: #177ec0;
+    text-decoration: none;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 50px;;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('../images/username_icon.png');
+    background-size: 20px;
+    background-position: 10px 13px;   
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    font-family: 'Quicksand', sans-serif;
+    border: 1px solid #b3b3b3;
+}
+
+input[type=password] {
+    width: 100%;
+    height: 50px;
+    margin-top: 3%;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('../images/password_icon.png');
+    background-size: 20px;
+    background-position: 10px 13px; 
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    font-family: 'Quicksand', sans-serif;
+    border: 1px solid #b3b3b3;
+}
+
+input[type=submit] {
+    width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #177ec0;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-weight: 600;
+    border: 1px solid #177ec0;
+}
+
+input:focus {
+    outline: none;
+}
+
+/*
+    LOGIN.PHP
+*/
+div.container_upload_file_main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.95;
+}
+
+div.container_upload_file_main span.container_logout {
+    position: relative;
+    top: 1%;
+    left: 1%;
+    width: 500px;
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
