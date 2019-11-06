@@ -1,0 +1,130 @@
+nav {
+    .flag {
+        position: absolute;
+        left: 7px;
+        top: 20px;
+        background-image: url(../../../assets/flag.png);
+        width: 50px;
+        height: 30px;
+        background-size: cover;
+    }
+    .title {
+        position: absolute;
+        left: 65px;
+        top: 20px;
+        font-size: 1.8rem;
+        font-family: 'Coming Soon', cursive;
+    }
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    a {
+        margin: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    .vertical-line {
+        margin: 10px 1px 1px 1px;
+        width: 1px;
+        height: 2vh;
+        background-color: black;
+    }
+}
+
+.image-background {
+    background-image: url('../../../assets/background.jpg');
+    opacity: 0.9;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-attachment: fixed;
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    header {
+        width: 60%;
+        font-family: 'Poiret One', cursive;
+        
+       
+       
+        h1 {
+            font-size: 4rem;
+            margin: 10px 0 0 5px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        .line {
+            width: 400px;
+            height: 2px;
+            background-color: white;
+        }
+        button {
+            margin: 20px 0 0 15px;
+            border: 1px solid white;
+            width: 200px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+    }
+}
+
+.page-description {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .flex-container {
+        width: 350px;
+        margin: 50px 250px 0 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    p {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+}
+
+.benefits {
+    width: 100%;
+    height: 15vh;
+    margin-top: 30px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .single-benefit {
+        margin: 0 25px 0 15px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .fas, .far {
+        font-size: 4rem;
+        color: white;
+    }
+    p {
+        margin: 5px;
+        font-size: 1.4rem;
+        color: white;
+    }
+}
