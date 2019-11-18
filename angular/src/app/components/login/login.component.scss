@@ -1,0 +1,36 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .example-container > * {
+    width: 130%;
+    
+  }
+  h1 {
+    font-size: 40px;
+    margin-top: 0;
+}
+
+  .login {
+      width: 50%;
+      background-color: lightgray;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.register {
+    width: 50%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
