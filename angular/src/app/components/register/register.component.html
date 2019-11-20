@@ -1,0 +1,47 @@
+
+<div class="example-container">
+    <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+  <mat-form-field appearance="legacy">
+    <input matInput placeholder="Enter your email" name="email" formControlName="email" required>
+    
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" name="password" formControlName="password" required>
+   
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="First name" name="firstName" formControlName="firstName" required>
+  
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Last name" name="lastName" formControlName="lastName" required>
+   
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Telephon number" name="tel" formControlName="tel" >
+    
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Bank account number" name="bank" formControlName="bank">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Zarejestruj się</button>
+</form>
+  <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="sex">
+  <mat-radio-button value="male" color="primary">Male</mat-radio-button>
+  <mat-radio-button value="female" color="primary">Female</mat-radio-button>
+  </mat-radio-group>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+  </mat-form-field>
+</div>
