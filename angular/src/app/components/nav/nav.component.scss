@@ -4,8 +4,8 @@ nav {
         left: 7px;
         top: 0px;
         background-image: url('/assets/img/logo.png');
-        width: 150px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         background-size: cover;
         z-index: 100;
     }
@@ -23,12 +23,7 @@ nav {
         text-transform: uppercase;
         letter-spacing: 1.5px;
     }
-    .vertical-line {
-        margin: 10px 1px 1px 1px;
-        width: 1px;
-        height: 2vh;
-        background-color: black;
-    }
+
 }
 
 .image-background {

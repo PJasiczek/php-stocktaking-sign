@@ -2,7 +2,7 @@
 <div class="example-container">
     <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
   <mat-form-field appearance="legacy">
-    <input matInput placeholder="Enter your email" name="email" formControlName="email" required>
+    <input matInput placeholder="Enter your email" name="email" formControlName="email" required color="primary">
     
   </mat-form-field>
 
@@ -12,36 +12,40 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="First name" name="firstName" formControlName="firstName" required>
+    <input matInput placeholder="First name" name="first_name" formControlName="first_name" required>
   
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Last name" name="lastName" formControlName="lastName" required>
+    <input matInput placeholder="Last name" name="last_name" formControlName="last_name" required>
    
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Telephon number" name="tel" formControlName="tel" >
+    <input matInput placeholder="Telephon number" name="telephone_number" formControlName="telephone_number" >
     
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Bank account number" name="bank" formControlName="bank">
+    <input matInput placeholder="Bank account number" name="bank_account_number" formControlName="bank_account_number">
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Zarejestruj się</button>
-</form>
+
   <mat-radio-group
   aria-labelledby="example-radio-group-label"
   class="example-radio-group"
-  [(ngModel)]="sex">
-  <mat-radio-button value="male" color="primary">Male</mat-radio-button>
-  <mat-radio-button value="female" color="primary">Female</mat-radio-button>
+  [(ngModel)]="sex"
+  name="sex" formControlName="sex" >
+  <mat-radio-button value="M" color="primary" >Male</mat-radio-button>
+  <mat-radio-button value="K" color="primary">Female</mat-radio-button>
   </mat-radio-group>
+
   
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date_of_birth" formControlName="date_of_birth"> 
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
   </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Zarejestruj się</button>
+</form>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { HttpService } from 'src/app/services/http.service';
 
 
 @Component({
@@ -14,16 +15,21 @@ export class RegisterComponent implements OnInit {
   modelForm: FormGroup;
   
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private httpService: HttpService) { }
 
   ngOnInit() {
     this.modelForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.min(3)]],
-    firstName:['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
-    lastName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
-    tel: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern('^[0-9]{6,9}$')]],
-    bank:['', [Validators.required, Validators.maxLength(26), Validators.pattern('^[0-9]{6,9}$')]],
+    first_name:['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
+    last_name: ['', [Validators.required, Validators.pattern('^[a-zA-Z]*$')]],
+    telephone_number: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern('^[0-9]{6,9}$')]],
+    bank_account_number:['', [Validators.required, Validators.maxLength(26), Validators.pattern('^[0-9]{6,9}$')]],
+    sex: [],
+    date_of_birth: [],
+    balance: [],
+    address: ['test adress'],
     })
 
     
@@ -31,7 +37,10 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.log(this.modelForm)
+    console.log(this.modelForm.value)
+    this.httpService.addUser(this.modelForm.value);
+
+
   }
 
 }

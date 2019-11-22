@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -22,12 +23,18 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpService } from './services/http.service';
+import { AdminComponent } from './components/admin/admin.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
+import {MatCardModule} from '@angular/material/card';
+import { HttpOrdersService } from './services/http-orders.service';
+import { OrderDialogComponent } from './components/order-dialog/order-dialog.component';
 
 
 const appRoutes = [
   {path: '', component: NavComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'orders', component: OrdersComponent},
   {path: '**',  redirectTo: '/', pathMatch: 'full'},
 ];
 
@@ -36,7 +43,10 @@ const appRoutes = [
     AppComponent,
     NavComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent,
+    OrdersComponent,
+    OrderDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +60,12 @@ const appRoutes = [
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule,
+    MatDialogModule
   ],
-  providers: [HttpService],
-  bootstrap: [AppComponent]
+  providers: [HttpService, HttpOrdersService],
+  bootstrap: [AppComponent],
+  entryComponents: [OrderDialogComponent],
 })
 export class AppModule { }

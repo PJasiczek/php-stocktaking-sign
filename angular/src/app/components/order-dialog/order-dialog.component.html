@@ -1,0 +1,35 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.type" placeholder="type">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.city" placeholder="city">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.hour_price" placeholder="hour price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.free_places_count" placeholder="free places">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.places_count" placeholder="all places count">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.start_time" type="datetime-local" placeholder="start date">
+  </mat-form-field>
+
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
