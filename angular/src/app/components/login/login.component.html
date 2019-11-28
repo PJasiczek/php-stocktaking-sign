@@ -4,13 +4,13 @@
         <h3>Inwentpol.pl</h3>
         <h1>Zaloguj się</h1>
       <mat-form-field>
-        <input matInput placeholder="Input">
+        <input matInput [(ngModel)]="userLogin[0].email" placeholder="Podaj email">
       </mat-form-field>
 
       <mat-form-field>
-          <input matInput placeholder="Input">
+          <input matInput [(ngModel)]="userLogin[0].password" placeholder="Podaj hasło">
         </mat-form-field>
-      <button mat-raised-button color="primary">Zaloguj się</button>
+      <button mat-raised-button color="primary" (click)="login()">Zaloguj się</button>
     </div>
 </span>
 <div class="register">

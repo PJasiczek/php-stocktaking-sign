@@ -8,9 +8,13 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class OrderDialogComponent {
 
+  id = 0;
   constructor(
     public dialogRef: MatDialogRef<OrderDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      data.event_code = this.id;
+      this.id++;
+    }
 
   onNoClick(): void {
     this.dialogRef.close();

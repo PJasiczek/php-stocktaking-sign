@@ -11,47 +11,39 @@ import { HttpOrdersService } from 'src/app/services/http-orders.service';
 export class OrdersComponent implements OnInit {
 
   orders = [];
+  result = "result"
   filterOrders = [];
   constructor(public dialog: MatDialog,
     private httpService: HttpOrdersService) { 
-    this.orders = [{
-      id: 0,
-      free_places_count: 0,
-      places_count: 14,
-      name: 'Inwentaryzacja magazynu',
-      city: 'Wroclaw',
-      date: new Date('2019/02/25'),
-      start_time: '18:30',
-      end_time: '22:30',
-      address: 'Braniborska 32',
-      hour_price: 18,
-      description: 'Brak dodatkowych informacji'
-    },
-  ]
+
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(OrderDialogComponent, {
       width: '250px',
-      data: {data: this.orders}
+      data: {data: this.result}
     });
 
     dialogRef.afterClosed().subscribe(result => {
     
-      //this.orders.push(result => );
-      //JSON.stringify(this.orders);
-      //console.log(this.orders);
-      this.httpService.newOrder(JSON.stringify(this.orders));
-      
+      console.log(result)
+      this.orders.push(result);
+      this.httpService.newOrder(JSON.stringify(result));
     });
   }
 
 
   ngOnInit() {
+    this.httpService.getOrders().subscribe((data: any) => {
+      data.forEach(item => {
+        this.orders.push(item);
+      })
+      
+    })
   }
 
   removeOrder(i) {
-    this.filterOrders = this.orders.filter(order => {order !== i });
-    this.orders = this.filterOrders;
+    this.httpService.deleteOrder(this.orders[i].event_code);
+    
   }
 
 }

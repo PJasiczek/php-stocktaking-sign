@@ -27,7 +27,17 @@
     <input matInput [(ngModel)]="data.start_time" type="datetime-local" placeholder="start date">
   </mat-form-field>
 
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.end_time" placeholder="end date">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.street_name"  placeholder="street name">
+  </mat-form-field>
   
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.apartment_number"  placeholder="apartment">
+  </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>

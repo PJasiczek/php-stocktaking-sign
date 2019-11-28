@@ -1,11 +1,11 @@
 <button class="logout" mat-button color="primary">Wyloguj</button>
 <ng-container *ngFor="let order of orders; let i = index">
   <mat-card>
-    <span class="places">{{14-order.free_places_count}}/{{order.places_count}}</span> 
+    <span class="places">{{order.free_places_count}}/{{order.places_count}}</span> 
     <span class="order-element"> {{order.name}} </span> 
     <span class="order-element"> {{order.city}} </span> 
     <span class="order-element">{{order.date| date:'yyyy-MM-dd'}}</span>
-    <span class="order-element"> ul.{{order.address}} </span> 
+    <span class="order-element"> {{order.street_name}} {{order.apartment_number}} </span> 
     <span class="order-element"> start: {{order.start_time}} </span> 
     <span class="order-element"> koniec: {{order.end_time}}  </span> 
     <!-- <span class="order-element"> start: {{order.start_time | date:'shortTime'}} </span> 
