@@ -16,6 +16,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
@@ -30,6 +33,9 @@ import { OrdersComponent } from './components/admin/orders/orders.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpOrdersService } from './services/http-orders.service';
 import { OrderDialogComponent } from './components/order-dialog/order-dialog.component';
+import { UserMainPageComponent } from './components/user-main-page/user-main-page.component';
+import { UserComponent } from './components/user-main-page/user/user.component';
+import { UserService } from './services/user.service';
 
 
 const appRoutes = [
@@ -37,6 +43,7 @@ const appRoutes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'orders', component: OrdersComponent},
+  {path: 'user-main', component: UserMainPageComponent},
   {path: '**',  redirectTo: '/', pathMatch: 'full'},
 ];
 
@@ -48,7 +55,9 @@ const appRoutes = [
     RegisterComponent,
     AdminComponent,
     OrdersComponent,
-    OrderDialogComponent
+    OrderDialogComponent,
+    UserMainPageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -65,8 +74,12 @@ const appRoutes = [
     MatRadioModule,
     MatCardModule,
     MatDialogModule,
+    MatTabsModule,
+    MatListModule,
+    MatToolbarModule,
+   
   ],
-  providers: [HttpService, HttpOrdersService],
+  providers: [HttpService, HttpOrdersService, UserService],
   bootstrap: [AppComponent],
   entryComponents: [OrderDialogComponent],
 })

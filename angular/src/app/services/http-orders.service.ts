@@ -24,8 +24,18 @@ export class HttpOrdersService {
   }
 
   deleteOrder(event_code) {
-    return this.http.delete(' http://jasiu1041.unixstorm.org/ibd-stocktaking-backend/delete_event.php', event_code).toPromise().then(data => {
+    let obj = [{
+      "event_code": event_code.toString(),
+    }]
+    return this.http.post('http://jasiu1041.unixstorm.org/ibd-stocktaking-backend/delete_event.php', JSON.stringify(obj[0]),  {responseType: 'text'} ).toPromise().then(data => {
       console.log(data);
     });
+  }
+
+  editOrder(order) {
+    console.log(order);
+    return this.http.post("http://jasiu1041.unixstorm.org/ibd-stocktaking-backend/modify_event.php", order, {responseType: 'text'}).toPromise().then(data => {
+      console.log(data);
+    })
   }
 }

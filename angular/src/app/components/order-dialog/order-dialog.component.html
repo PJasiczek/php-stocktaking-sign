@@ -1,42 +1,52 @@
 <div mat-dialog-content>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.name" placeholder="name">
+    <input matInput [(ngModel)]="data.name" placeholder="Nazwa zlecenia">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.type" placeholder="type">
+    <input matInput [(ngModel)]="data.type" placeholder="Typ">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.city" placeholder="city">
+    <input matInput [(ngModel)]="data.city" placeholder="Miasto">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.hour_price" placeholder="hour price">
+    <input matInput [(ngModel)]="data.hour_price" placeholder="Stawka za godzine">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.free_places_count" placeholder="free places">
+    <input matInput [(ngModel)]="data.free_places_count" placeholder="Wolne miejsca">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.places_count" placeholder="all places count">
+    <input matInput [(ngModel)]="data.places_count" placeholder="Wszystkie miejsca">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="data.date" placeholder="Wybierz date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.start_time" type="datetime-local" placeholder="start date">
+    <input matInput [(ngModel)]="data.start_time" placeholder="Godzina">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.end_time" placeholder="end date">
+    <input matInput [(ngModel)]="data.end_time" placeholder="Godzina zakończenia">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="data.street_name"  placeholder="street name">
+    <input matInput [(ngModel)]="data.street_name"  placeholder="Nazwa ulicy">
   </mat-form-field>
   
   <mat-form-field>
-    <input matInput [(ngModel)]="data.apartment_number"  placeholder="apartment">
+    <input matInput [(ngModel)]="data.apartment_number"  placeholder="Nr mieszkania">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.description"  placeholder="Opis zlecenia">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

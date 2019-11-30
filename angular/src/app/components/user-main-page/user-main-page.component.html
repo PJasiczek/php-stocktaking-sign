@@ -1,0 +1,25 @@
+<ng-container *ngIf="!userFlag">
+<button mat-button color="primary" style="position: absolute; right: 100px; text-decoration: underline;"(click)="showUser()">{{user.email}}</button>
+<button mat-button color="primary" style="position: absolute; right: 5px;" (click)="logOut()">WYLOGUJ</button>
+<h1 style="width: 100%; text-align: center;">Dostępne zlecenia:</h1>
+<ng-container *ngFor="let order of orders; let i = index">
+  <mat-card>
+    <button mat-button color="warn" [disabled]="order.places_count > order.free_places_count ? false : true" (click)="addPerson(order.event_id, i)">Zapisz się</button>
+    <span class="places">{{order.free_places_count}}/{{order.places_count}}</span> 
+    <span class="order-element"> {{order.name}} </span> 
+    <span class="order-element"> {{order.city}} </span> 
+    <span class="order-element">{{order.date| date:'yyyy-MM-dd'}}</span>
+    <span class="order-element"> {{order.street_name}} {{order.apartment_number}} </span> 
+    <span class="order-element"> start: {{order.start_time}} </span> 
+    <span class="order-element"> koniec: {{order.end_time}}  </span> 
+    <!-- <span class="order-element"> start: {{order.start_time | date:'shortTime'}} </span> 
+    <span class="order-element"> koniec: {{order.end_time | date:'shortTime'}} </span>  -->
+    <span class="order-element"> <strong>{{order.hour_price}} PLN/h</strong> </span> 
+    <span class="order-element">  {{order.description}} </span> 
+  </mat-card>
+</ng-container>
+</ng-container>
+<mat-card class="accept-card" *ngIf="accept">Wykonano poprawny zapis</mat-card>
+<app-user 
+          *ngIf="userFlag"
+          [user]=user></app-user>

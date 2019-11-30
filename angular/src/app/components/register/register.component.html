@@ -1,33 +1,41 @@
-
+<div class="img"></div>
+<a class="back" mat-stroked-button routerLink="/main-page">Powrót</a>
 <div class="example-container">
-    <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
-  <mat-form-field appearance="legacy">
-    <input matInput placeholder="Enter your email" name="email" formControlName="email" required color="primary">
+  <h1>Zarejestruj się</h1>
+    <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)" >
+  <mat-form-field appearance="legacy" >
+    <input matInput placeholder="Podaj adres email" name="email" formControlName="email" required >
     
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Password" type="password" name="password" formControlName="password" required>
-   
+    <input matInput class="placeholder" placeholder="Utwórz hasło" type="password" name="password" formControlName="password" required> 
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Powtórz hasło" type="password" name="password_confirm" formControlName="password_confirm" required> 
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="First name" name="first_name" formControlName="first_name" required>
+    <input matInput placeholder="Imię" name="first_name" formControlName="first_name" required>
   
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Last name" name="last_name" formControlName="last_name" required>
+    <input matInput placeholder="Nazwisko" name="last_name" formControlName="last_name" required>
    
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Telephon number" name="telephone_number" formControlName="telephone_number" >
+    <input matInput placeholder="Numer telefonu" name="telephone_number" formControlName="telephone_number" >
     
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Bank account number" name="bank_account_number" formControlName="bank_account_number">
+    <input matInput placeholder="Numer konta (26 cyfr) " name="bank_account_number" formControlName="bank_account_number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Miasto" name="city_name" formControlName="city_name">
   </mat-form-field>
 
   <mat-radio-group
@@ -35,17 +43,27 @@
   class="example-radio-group"
   [(ngModel)]="sex"
   name="sex" formControlName="sex" >
-  <mat-radio-button value="M" color="primary" >Male</mat-radio-button>
-  <mat-radio-button value="K" color="primary">Female</mat-radio-button>
+  <mat-radio-button value="M" color="primary" >Mężczyzna </mat-radio-button>
+  <mat-radio-button value="K" color="primary">Kobieta</mat-radio-button>
   </mat-radio-group>
 
   
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date_of_birth" formControlName="date_of_birth"> 
+    <input matInput [matDatepicker]="picker" placeholder="Data urodzin" name="date_of_birth" formControlName="date_of_birth"> 
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit">Zarejestruj się</button>
+  <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="is_pregnant"
+  name="is_pregnant" formControlName="is_pregnant" >
+  <mat-radio-button value="1" color="primary"> Jestem w ciąży </mat-radio-button>
+  </mat-radio-group>
+
+  <button  class="button" type="submit">Zarejestruj się</button>
 </form>
 </div>
+
+    

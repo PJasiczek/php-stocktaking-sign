@@ -7,13 +7,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./order-dialog.component.scss']
 })
 export class OrderDialogComponent {
-
-  id = 0;
+  minDate = new Date(2000, 0, 1);
+  maxDate = new Date(2020, 0, 1);
   constructor(
     public dialogRef: MatDialogRef<OrderDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-      data.event_code = this.id;
-      this.id++;
+      data.event_code = Math.floor((Math.random() * 1000000) + 1);
     }
 
   onNoClick(): void {

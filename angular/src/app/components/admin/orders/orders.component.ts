@@ -19,7 +19,8 @@ export class OrdersComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(OrderDialogComponent, {
-      width: '250px',
+      width: '300px',
+      height: '800px',
       data: {data: this.result}
     });
 
@@ -43,7 +44,21 @@ export class OrdersComponent implements OnInit {
 
   removeOrder(i) {
     this.httpService.deleteOrder(this.orders[i].event_code);
+    window.location.reload();
+  }
+  editOrder(i) {
+    console.log("tu");
+    console.log(this.orders[i]);
+    const dialogRef = this.dialog.open(OrderDialogComponent, {
+      width: '250px',
+      data: {data: this.result}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
     
+      console.log(result);
+      this.httpService.editOrder(JSON.stringify(result));
+    });
   }
 
 }

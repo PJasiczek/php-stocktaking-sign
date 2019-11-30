@@ -1,0 +1,48 @@
+<mat-tab-group>
+  <mat-tab label="Moje zlecenia">
+    
+    <mat-list>
+      <h2 mat-subheader>Zapisany na zlecenia:</h2>
+      <mat-list-item *ngFor="let data of orders[0]; let i = index" >
+        
+        <h4 mat-line>{{data.name}}</h4>
+        <div mat-line style="display: flex; flex-direction: row;"> 
+          <p>{{data.city_name}},</p>  
+          <p>{{data.date}}</p> 
+          <p>{{data.start_time}}-{{data.end_time}}</p> </div>
+      <div mat-line style="display: flex; flex-direction: row;"> 
+        <p>{{data.street_name}} {{data.apartment_number}}</p> 
+      </div>
+      <div mat-line style="display: flex; flex-direction: row;"> 
+        <strong>{{data.hour_price}} PLN/h</strong>  
+        <button mat-raised-button color="warn" (click)="singOut(data.event_id, i)">Wypisz się</button>
+      </div>
+     
+    </mat-list-item>
+      <mat-divider></mat-divider>
+      
+    </mat-list>
+
+  </mat-tab>
+  <mat-tab label="Mój profil"> Mój profil </mat-tab>
+</mat-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mat-form-field>
+  <input matInput [(ngModel)]="user.email" placeholder="Podaj email">
+</mat-form-field>
+
+<mat-form-field>
+    <input matInput [(ngModel)]="user.password" placeholder="Podaj hasło">
+</mat-form-field>
