@@ -35,4 +35,11 @@ export class UserService {
     
     return this.http.post(this.deleteUrl, JSON.stringify(obj) );
   }
+
+  editUserData(user) {
+    console.log('works')
+    return this.http.post('http://jasiu1041.unixstorm.org/ibd-stocktaking-backend/user_profile_modify.php', JSON.stringify(user),  {responseType: 'text'} ).toPromise().then(data => {
+      console.log(data);
+    });
+  }
 }

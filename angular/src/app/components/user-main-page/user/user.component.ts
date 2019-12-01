@@ -11,15 +11,15 @@ export class UserComponent implements OnInit {
 
   @Input() user;
   orders = [];
+  dialogFlag = false;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUserOrders(this.user.user_id).subscribe(data => {
       //console.log(data);
-      this.orders.push(JSON.parse(data));
-      console.log(this.orders)
+      this.orders.push(JSON.parse(data));  
     })
-    console.log(this.user)
+  
 
   }
 
@@ -29,5 +29,17 @@ export class UserComponent implements OnInit {
     
     })
     }
+
+    confirmProfilChanges() {
+      this.userService.editUserData(this.user);
+    }
+
+    payOff() {
+      this.dialogFlag = true;
+      setTimeout(() => 
+{
+    this.dialogFlag = false;
+},3000)}
+    
 
 }

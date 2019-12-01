@@ -47,7 +47,6 @@ export class OrdersComponent implements OnInit {
     window.location.reload();
   }
   editOrder(i) {
-    console.log("tu");
     console.log(this.orders[i]);
     const dialogRef = this.dialog.open(OrderDialogComponent, {
       width: '250px',
@@ -61,4 +60,7 @@ export class OrdersComponent implements OnInit {
     });
   }
 
+  logOut() {
+    
+  }
 }

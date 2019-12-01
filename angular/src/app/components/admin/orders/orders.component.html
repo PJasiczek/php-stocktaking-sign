@@ -1,4 +1,4 @@
-<button class="logout" mat-button color="primary">Wyloguj</button>
+<button class="logout" mat-button color="primary" routerLink="/login">Wyloguj</button>
 <ng-container *ngFor="let order of orders; let i = index">
   <mat-card>
     <span class="places">{{order.places_count-order.free_places_count}}/{{order.places_count}}</span> 
