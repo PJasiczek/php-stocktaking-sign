@@ -19,6 +19,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -77,6 +78,7 @@ const appRoutes = [
     MatTabsModule,
     MatListModule,
     MatToolbarModule,
+    MatCheckboxModule
    
   ],
   providers: [HttpService, HttpOrdersService, UserService],

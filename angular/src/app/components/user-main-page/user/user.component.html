@@ -1,10 +1,11 @@
 <span style="position: absolute; width: 100%; height: 50px; background-color: black;"></span>
+<button mat-button color="accent" (click)="close()" style="position: absolute; top: 1%; right: 1%; z-index: 101" >Powrót</button>
 <mat-tab-group>
   <mat-tab label="Moje zlecenia">
     <mat-list>
       <h2 mat-subheader>Zapisany na zlecenia:</h2>
+      <mat-card class="accept-card" style="left: 20%;" *ngIf="wypisFlag">Poprawnie wypisano</mat-card>
       <mat-list-item *ngFor="let data of orders[0]; let i = index" >
-        
         <h4 mat-line>{{data.name}}</h4>
         <div mat-line style="display: flex; flex-direction: row;"> 
           <p>{{data.city_name}},</p>  
@@ -27,7 +28,7 @@
   <mat-tab  label="Mój profil"> 
     <h1>Twoje saldo: {{user.balance}} PLN</h1>
     <button mat-stroked-button color="primary" (click)="payOff()">Wypłać środki</button>
-    <mat-card class="accept-card" *ngIf="dialogFlag"></mat-card>
+    <mat-card class="accept-card" *ngIf="dialogFlag">Zlecenie przyjęte do realizacji</mat-card>
     <span class="edit-profile">
       <h1>Zmień dane</h1>
     <mat-form-field>

@@ -42,7 +42,7 @@
 .button {
   margin-top: 10px;
 	background-color: orange;
-	border-radius:28px;
+	border-radius:3 px;
 	
 	display:inline-block;
 	cursor:pointer;
@@ -53,9 +53,7 @@
 	text-decoration:none;
 
 }
-.button:hover {
-	background-color: yellow;
-}
+
 .button:active {
 	position:relative;
 	top:1px;

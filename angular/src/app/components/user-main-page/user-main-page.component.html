@@ -22,4 +22,5 @@
 <mat-card class="accept-card" *ngIf="accept">Wykonano poprawny zapis</mat-card>
 <app-user 
           *ngIf="userFlag"
-          [user]=user></app-user>
+          [user]=user
+          (emitCloseUser)="closeUser($event)"></app-user>

@@ -41,7 +41,7 @@ export class UserMainPageComponent implements OnInit {
 {
     this.accept = false;
 },
-5000);
+2000);
       }
       else {  console.log("jestem już zapisany ")}
     })
@@ -49,6 +49,10 @@ export class UserMainPageComponent implements OnInit {
   }
   showUser() {
     this.userFlag = true;
+  }
+
+  closeUser(event) {
+    this.userFlag = !event;
   }
 }
 

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+
 
 
 @Component({
@@ -12,6 +13,10 @@ export class UserComponent implements OnInit {
   @Input() user;
   orders = [];
   dialogFlag = false;
+  wypisFlag = false;
+  closeUser = false;
+  @Output() 
+  emitCloseUser = new EventEmitter<boolean>();
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -26,8 +31,14 @@ export class UserComponent implements OnInit {
   singOut(event_id, i) {
     
     this.userService.removeUserOrder(this.user['user_id'], event_id).subscribe(data => {
-    
+      this.wypisFlag = true;
+      setTimeout(() => 
+{
+  this.emitCloseUser.emit(!this.closeUser);
+},3000)
+      
     })
+
     }
 
     confirmProfilChanges() {
@@ -41,5 +52,8 @@ export class UserComponent implements OnInit {
     this.dialogFlag = false;
 },3000)}
     
-
+  close () {
+    console.log(!this.closeUser);
+    this.emitCloseUser.emit(!this.closeUser);
+  }
 }
