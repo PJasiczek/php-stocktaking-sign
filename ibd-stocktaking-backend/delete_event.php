@@ -9,15 +9,14 @@ $json = file_get_contents('php://input');
 //umieszczenie otrzymanego JSONa do utworzonego obiektu
 $obj = json_decode($json,true);
 
-$name = $obj['name'];
+$event_code = $obj['event_code'];
 
-$Sql_Query = "DELETE FROM event WHERE name='$name';";
+$Sql_Query = "DELETE FROM events WHERE event_code='$event_code';";
 
 if(mysqli_query($con,$Sql_Query)){
 
 	$MSG = 'Nastąpiło poprawne usunięcie wydarzenia' ;
 
-	//Konwersja wiadomości do JSONa
 	$json = json_encode($MSG);
 
 	echo $json ;
