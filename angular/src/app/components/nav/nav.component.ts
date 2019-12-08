@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
+ flag = true;
   constructor() { }
 
   ngOnInit() {
   }
-
+  changeFlag () {
+    this.flag = false;
+  }
 }

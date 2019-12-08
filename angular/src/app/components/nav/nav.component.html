@@ -61,3 +61,7 @@
   </div>
 </section>
 <div style="height: 90vh;"> </div>
+<span *ngIf="flag" style="display: flex; flex-direction: column; position: fixed; left: 0%; bottom: 0%; align-items: center; justify-content: center; background-color: black; width: 100%; height: 80px; color: white; font-size: 20px; text-align: center;">
+<div>
+ Strona korzysta z ciasteczek, czy zgadzasz się na wykorzystanie?</div>
+  <button (click)=changeFlag() style="background-color: black; color: white; width: 100px; z-index:100">Zgadzam się</button></span>

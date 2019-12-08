@@ -3,7 +3,7 @@
   <mat-card>
     <span class="places">{{order.places_count-order.free_places_count}}/{{order.places_count}}</span> 
     <span class="order-element"> {{order.name}} </span> 
-    <span class="order-element"> {{order.city}} </span> 
+    <span class="order-element"> {{order.city_name}} </span> 
     <span class="order-element">{{order.date | date:'yyyy-MM-dd'}}</span>
     <span class="order-element"> {{order.street_name}} {{order.apartment_number}} </span> 
     <span class="order-element"> start: {{order.start_time}} </span> 

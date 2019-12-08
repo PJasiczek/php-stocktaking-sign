@@ -81,7 +81,7 @@ const appRoutes = [
     MatCheckboxModule
    
   ],
-  providers: [HttpService, HttpOrdersService, UserService],
+  providers: [HttpService, HttpOrdersService, UserService, LoginComponent],
   bootstrap: [AppComponent],
   entryComponents: [OrderDialogComponent],
 })

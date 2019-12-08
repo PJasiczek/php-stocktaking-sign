@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(private httpService: HttpService,
     private router: Router) {
     this.userLogin = [{
-      email : 'jasiu1059@wp.pl', //jasiu1059@wp.pl
-      password: 'password1' }
+      email : '', //jasiu1059@wp.pl
+      password: '' }
     ];
    }
 
