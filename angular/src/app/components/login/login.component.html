@@ -1,0 +1,23 @@
+<span style="display: flex; flex-direction: row;">
+<span class="login">
+    <div class="example-container">
+        <h3>Inwentpol.pl</h3>
+        <h1>Zaloguj się</h1>
+      <mat-form-field>
+        <input matInput [(ngModel)]="userLogin[0].email" placeholder="Podaj email">
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput [(ngModel)]="userLogin[0].password" type="password" placeholder="Podaj hasło">
+        </mat-form-field>
+      <button mat-raised-button color="primary" (click)="login()">Zaloguj się</button>
+        
+    </div>
+</span>
+<div class="register">
+    <p>Nie masz konta?</p>
+    <button mat-stroked-button color="primary" routerLink="/register">ZAREJESTRUJ SIĘ</button>
+  </div>
+
+</span>
+

@@ -1,0 +1,57 @@
+<span style="position: absolute; width: 100%; height: 50px; background-color: black;"></span>
+<button mat-button color="accent" (click)="close()" style="position: absolute; top: 1%; right: 1%; z-index: 101" >Powrót</button>
+<mat-tab-group>
+  <mat-tab label="Moje zlecenia">
+    <mat-list>
+      <h2 mat-subheader>Zapisany na zlecenia:</h2>
+      <mat-card class="accept-card" style="left: 20%;" *ngIf="wypisFlag">Poprawnie wypisano</mat-card>
+      <mat-list-item *ngFor="let data of orders[0]; let i = index" >
+        <h4 mat-line>{{data.name}}</h4>
+        <div mat-line style="display: flex; flex-direction: row;"> 
+          <p>{{data.city_name}},</p>  
+          <p>{{data.date}}</p> 
+          <p>{{data.start_time}}-{{data.end_time}}</p> </div>
+      <div mat-line style="display: flex; flex-direction: row;"> 
+        <p>{{data.street_name}} {{data.apartment_number}}</p> 
+      </div>
+      <div mat-line style="display: flex; flex-direction: row;"> 
+        <strong>{{data.hour_price}} PLN/h</strong>  
+        <button mat-raised-button color="warn" (click)="singOut(data.event_id, i)">Wypisz się</button>
+      </div>
+     
+    </mat-list-item>
+      <mat-divider></mat-divider>
+      
+    </mat-list>
+
+  </mat-tab>
+  <mat-tab  label="Mój profil"> 
+    <h1>Twoje saldo: {{user.balance}} PLN</h1>
+    <button mat-stroked-button color="primary" (click)="payOff()">Wypłać środki</button>
+    <mat-card class="accept-card" *ngIf="dialogFlag">Zlecenie przyjęte do realizacji</mat-card>
+    <span class="edit-profile">
+      <h1>Zmień dane</h1>
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.email" placeholder="Nowy email">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput [(ngModel)]="user.password" placeholder="Nowe hasło">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.telephone_number" placeholder="Telefon">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="user.bank_account_number" placeholder="Nr konta bankowego">
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput [(ngModel)]="user.city_name" placeholder="Miasto">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="confirmProfilChanges()" >Potwierdź</button>
+</span>
+  </mat-tab>
+</mat-tab-group>
+

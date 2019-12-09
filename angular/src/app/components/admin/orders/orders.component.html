@@ -1,0 +1,20 @@
+<button class="logout" mat-button color="primary" routerLink="/login">Wyloguj</button>
+<ng-container *ngFor="let order of orders; let i = index">
+  <mat-card>
+    <span class="places">{{order.places_count-order.free_places_count}}/{{order.places_count}}</span> 
+    <span class="order-element"> {{order.name}} </span> 
+    <span class="order-element"> {{order.city_name}} </span> 
+    <span class="order-element">{{order.date | date:'yyyy-MM-dd'}}</span>
+    <span class="order-element"> {{order.street_name}} {{order.apartment_number}} </span> 
+    <span class="order-element"> start: {{order.start_time}} </span> 
+    <span class="order-element"> koniec: {{order.end_time}}  </span> 
+    <!-- <span class="order-element"> start: {{order.start_time | date:'shortTime'}} </span> 
+    <span class="order-element"> koniec: {{order.end_time | date:'shortTime'}} </span>  -->
+    <span class="order-element"> <strong>{{order.hour_price}} PLN/h</strong> </span> 
+    <span class="order-element">  {{order.description}} </span> 
+    <i class="fas fa-pencil-alt"style="cursor: pointer;" (click)="editOrder(i)"></i>
+    <i class="fas fa-trash-alt" style="cursor: pointer;" (click)="removeOrder(i)"></i>
+  </mat-card>
+</ng-container>
+
+<button class="new-order" mat-raised-button color="primary" (click)="openDialog()">Nowe</button>

@@ -1,0 +1,67 @@
+<nav> 
+  <div class="flag"></div>
+  <button mat-button color="primary" routerLink="login">Logowanie</button>
+  <button mat-button color="primary" routerLink="register">Rejestracja</button>
+</nav>
+<div class="title-container">
+  <div class="image-background">
+    <header>
+      
+        <h1>Inwentaryzacje z jakością.</h1>
+        <h2>Znajdź pracę dorywczą już dziś!</h2>
+        <div class="line"></div>
+        <button class="login" routerLink="login">Zaloguj się</button>
+      
+    </header>
+  </div>
+</div>
+<section class="page-description">
+  <div class="flex-container">
+    <h2>Szukasz pracowników?</h2>
+    <p>Prowadzimy rekrutacje na terenie całego kraju! 
+      Legalne umowy, nowoczesny sposób wyszukiwania pracowników.
+      Zainteresowane firmy prosimy o kontakty telefoniczne pod nr 669 765 778.  </p>
+  </div>
+  <div class="flex-container">
+    <h2>Szukasz pracy dorywczej?</h2>
+    <p>Oferujemy pracę w firmach na terenie całej Polski. Oferujemy wysokie stawki oraz wysokie premie za realizowane zlecenia.
+      Zarejestruj się i zapisz na inwentaryzację z łatwością w 5 minut. Oferujemy również cotygodniowe wypłaty. Zaufało nam już wiele użytkowników, zaufaj i Ty! :)
+    </p>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="single-benefit">
+      <i class="fas fa-city"></i>
+      <p>Różne miasta</p>
+  </div>
+  <div class="single-benefit">
+    <div class="single-benefit">
+      <i class="fas fa-coins"></i>
+      <p>Tygodniowe wypłaty</p>
+  </div>
+  </div>
+  <div class="single-benefit">
+    <div class="single-benefit">
+      <i class="fas fa-handshake"></i>
+      <p>Umowa online</p>
+    </div>
+  </div>
+  <div class="single-benefit">
+    <div class="single-benefit">
+      <i class="far fa-calendar-alt"></i>
+      <p>Elastyczny grafik</p>
+    </div>
+  </div>
+  <div class="single-benefit">
+    <div class="single-benefit">
+      <i class="fas fa-dollar-sign"></i>
+      <p>Liczne premie</p>
+    </div>
+  </div>
+</section>
+<div style="height: 90vh;"> </div>
+<span *ngIf="flag" style="display: flex; flex-direction: column; position: fixed; left: 0%; bottom: 0%; align-items: center; justify-content: center; background-color: black; width: 100%; height: 80px; color: white; font-size: 20px; text-align: center;">
+<div>
+ Strona korzysta z ciasteczek, czy zgadzasz się na wykorzystanie?</div>
+  <button (click)=changeFlag() style="background-color: black; color: white; width: 100px; z-index:100">Zgadzam się</button></span>

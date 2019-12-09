@@ -1,0 +1,55 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="Nazwa zlecenia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.type" placeholder="Typ">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.city_name" placeholder="Miasto">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.hour_price" placeholder="Stawka za godzine">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.free_places_count" placeholder="Wolne miejsca">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.places_count" placeholder="Wszystkie miejsca">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="data.date" placeholder="Wybierz date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.start_time" placeholder="Godzina">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.end_time" placeholder="Godzina zakończenia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.street_name"  placeholder="Nazwa ulicy">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.apartment_number"  placeholder="Nr mieszkania">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.description"  placeholder="Opis zlecenia">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
